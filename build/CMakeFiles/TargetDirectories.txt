@@ -1,0 +1,3 @@
+/data/data/com.termux/files/home/cpp_projects/Geometry/build/CMakeFiles/Geometry.dir
+/data/data/com.termux/files/home/cpp_projects/Geometry/build/CMakeFiles/edit_cache.dir
+/data/data/com.termux/files/home/cpp_projects/Geometry/build/CMakeFiles/rebuild_cache.dir
