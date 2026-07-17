@@ -65,9 +65,10 @@ class Expression
 {
     Point m_p1;
     Point m_p2;
-    std::string m_expression;
-    double const_c;
     double gradient_m;
+    double const_c;
+    std::string m_expression;
+    
 
     double sub_y(double y) const
     {
