@@ -1,5 +1,5 @@
 #include <iostream>
-#include <sstream>
+#include "Line.hpp"
 #include "Point.hpp"
 #include <limits> // For infinity checks
 
