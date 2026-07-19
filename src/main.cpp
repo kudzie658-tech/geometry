@@ -65,31 +65,31 @@ class Expression
 {
     Point m_p1;
     Point m_p2;
-    double gradient_m;
-    double const_c;
+    double m_gradient_m;
+    double m_const_c;
     std::string m_expression;
     
 
     double sub_y(double y) const
     {
-        if (gradient_m == 0) return std::numeric_limits<double>::quiet_NaN(); // Horizontal line
-        return (y - const_c) / gradient_m;
+        if (m_gradient_m == 0) return std::numeric_limits<double>::quiet_NaN(); // Horizontal line
+        return (y - m_const_c) / m_gradient_m;
     }
 
     double sub_x(double x) const
     {
-        return (gradient_m * x + const_c);
+        return (m_gradient_m * x + m_const_c);
     }
 
 public:
     Expression(const Point& p1, const Point& p2)
         : m_p1{p1}, m_p2{p2},
-          gradient_m{Geometry::gradient(p1, p2)},
-          const_c{Geometry::constantC(p1, gradient_m)}
+          m_gradient_m{Geometry::gradient(p1, p2)},
+          m_const_c{Geometry::constantC(p1, m_gradient_m)}
     {
         std::stringstream ss;
-        const std::string SIGN = (const_c > 0) ? " + " : " - ";
-        ss << "y = " << gradient_m << "x" << SIGN << Geometry::mod(const_c);
+        const std::string SIGN = (m_const_c > 0) ? " + " : " - ";
+        ss << "y = " << m_gradient_m << "x" << SIGN << Geometry::mod(m_const_c);
         m_expression = ss.str();
     }
 
