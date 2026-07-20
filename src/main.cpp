@@ -1,15 +1,15 @@
 #include <iostream>
 #include "Line.hpp"
 
-
-class Expression
+int main()
 {
-    Point m_p1;
-    Point m_p2;
-    double m_gradient_m;
-    double m_const_c;
-    std::string m_expression;
-    
+    Point A{2, 2};
+    Point B{3, 3};
+    Expression line1{A, B};
+    line1.Print(); // Fixed: was 'line.Print()'
+}
+
+/*
 
     double sub_y(double y) const
     {
@@ -42,12 +42,4 @@ public:
     std::string expression() const { return m_expression; }
     double x_when_y_is(double y) const { return sub_y(y); }
     double y_when_x_is(double x) const { return sub_x(x); }
-};
-
-int main()
-{
-    Point A{2, 2};
-    Point B{3, 3};
-    Expression line1{A, B};
-    line1.Print(); // Fixed: was 'line.Print()'
-}
+*/

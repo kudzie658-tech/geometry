@@ -1,22 +1,26 @@
 class Expression
 {
-    Point m_p1;
-    Point m_p2;
+  int m_degree;
+  std::vector<double> m_coefficients(degree-1);
 
 protected:
-    void set_p1(const Point& p1){ p1 = p1; }
-    void set_p2(const Point& p2){ p2 = p2; }
+    void set_degree(int degree){ m_degree = degree; }
+    void set_coefficients(std::vector<double>& coefficients)
+    { 
+      m_coefficients.assign(coefficients.begin(),coefficients.end()); 
+    }
 
-    Point& get_p1(){ return p1; }
-    Point& get_p2(){ return p2; }
-    virtual std::string& expression();
+    int get_degree(){ return m_degree; }
+    std::vector<double> get_coefficients(){ return m_coefficients; }
 
 public:
-    Expression(const Point& p1, const Point& p2): m_p1{p1}, m_p2{p2} {}
+    Expression(int degree, std::vector<double> coefficients)
+      : m_degree{degree}, m_coefficients{coefficients} {}
 
-    void Print() const
-    {
-        std::println("Expression: {}", expression());
-    }
+    virtual void print() const;
+    virtual add(const Expression& other_expr);
+    virtual subtract(const Expression& other_expr);
+    virtual multiply_by(const Expression& other_expr);
+    virtual divide_by(const Expression& other_expr);
 };
 
