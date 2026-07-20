@@ -1,8 +1,11 @@
 #include "Expression"
 
-class Polynomial: Expression
+class Polynomial: public Expression
 {
   std::vector<double> m_roots(get_degree()-1);
+
+  protected:
+  std::vector
   
   public:
   Polynomial(int degree, std::vector<double>& coefficients, double roots)

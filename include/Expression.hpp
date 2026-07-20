@@ -1,3 +1,5 @@
+#include "Geometry.hpp"
+
 class Expression
 {
   int m_degree;
