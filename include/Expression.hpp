@@ -5,7 +5,7 @@ class Expression
   int m_degree;
   std::vector<double> m_coefficients(degree-1);
 
-protected:
+public:
     void set_degree(int degree){ m_degree = degree; }
     void set_coefficients(std::vector<double>& coefficients)
     { 
@@ -15,7 +15,6 @@ protected:
     int get_degree(){ return m_degree; }
     std::vector<double> get_coefficients(){ return m_coefficients; }
 
-public:
     Expression(int degree, std::vector<double> coefficients)
       : m_degree{degree}, m_coefficients{coefficients} {}
 

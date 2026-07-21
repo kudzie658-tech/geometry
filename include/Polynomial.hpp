@@ -10,7 +10,7 @@ class Polynomial: public Expression
   
   Polynomial(const Polynomial& p)
     : Expression(get_degree(), get_coefficients()), m_roots{p.get_roots()}{}
-
+  
   double function_of(double x)
   {
     std::vector<double>& coefficients= get_coefficients();
